@@ -1,0 +1,90 @@
+[
+  {
+    "id":1,
+    "name":"The Silent Patient",
+    "title":"The Silent Patient by Alex Michaelides",
+    "price":0,
+    "categary":"Free",
+    "image":"https://img.freepik.com/free-vector/gradient-stack-books-illustration_23-2149327721.jpg?ga=GA1.1.386693064.1710494351&semt=ais_hybrid"
+  },
+  {
+    "id":2,
+    "name":"Atomic Habits",
+    "title":"Atomic Habits by James Clear",
+    "price":100,
+    "categary":"Self-Help",
+    "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1740021453~exp=1740025053~hmac=d3a1221f8d8ac8f02a0a766463c0b010f7f11392282b70b15213d1fc58d84dc1&w=740"
+  },
+  {
+    "id":3,
+    "name":"Deep Work",
+    "title":"Deep Work by Cal Newport",
+    "price":0,
+    "categary":"Free",
+    "image":"https://img.freepik.com/premium-vector/stack-books-mug-books-reading-set-textbooks-academic-studies-literary-fans-vector-desk-with-textbooks-encyclopedias-workplace-workspace-learning-education-piles-literature_419010-325.jpg?ga=GA1.1.386693064.1710494351&semt=ais_hybrid"
+  },
+  {
+    "id":4,
+    "name":"Clean Code by Robert",
+    "title": "Clean Code",
+    "price":0,
+    "categary":"Free",
+    "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1740021453~exp=1740025053~hmac=d3a1221f8d8ac8f02a0a766463c0b010f7f11392282b70b15213d1fc58d84dc1&w=740"
+  },
+  {
+    "id":5,
+    "name":"Rich Dad Poor Dad",
+    "title":" Rich Dad Poor Dad by Robert",
+    "price":0,
+    "categary":"Free",
+    "image":"https://img.freepik.com/free-vector/realistic-book-lover-composition-with-stack-colorful-books-with-eyeglasses-home-plants-tea-cup-vector-illustration_1284-77312.jpg?ga=GA1.1.386693064.1710494351&semt=ais_hybrid"
+  },
+  {
+    "id":6,
+    "name":"Great Expectations",
+    "title":"Great Expectations by Charles Dickens",
+    "price":100,
+    "categary":"Classic Literature",
+    "image":"https://img.freepik.com/premium-vector/books-flying-stacked-cartoons_18591-47926.jpg?ga=GA1.1.386693064.1710494351&semt=ais_hybrid"
+  },
+  {
+    "id":7,
+    "name":"Frankenstein",
+    "title":"Frankenstein by Mary Shelley",
+    "price":0,
+    "categary":"Free",
+    "image":"https://img.freepik.com/premium-vector/books-flying-stacked-cartoons_18591-47926.jpg?ga=GA1.1.386693064.1710494351&semt=ais_hybrid"
+  },
+  {
+    "id":8,
+    "name":"Great Expectations",
+    "title":"Great Expectations by Charles Dickens",
+    "price":100,
+    "categary":"Classic Literature",
+    "image":"https://img.freepik.com/premium-vector/books-flying-stacked-cartoons_18591-47926.jpg?ga=GA1.1.386693064.1710494351&semt=ais_hybrid"
+  },
+  {
+    "id":9,
+    "name":"Pride and Prejudice",
+    "title":"Great Expectations by Charles Dickens",
+    "price":100,
+    "categary":"Classic Literature",
+    "image":"https://img.freepik.com/premium-vector/books-flying-stacked-cartoons_18591-47926.jpg?ga=GA1.1.386693064.1710494351&semt=ais_hybrid"
+  },
+  {
+    "id":10,
+    "name":"Great Expectations",
+    "title":"Great Expectations by Charles Dickens",
+    "price":0,
+    "categary":"Free",
+    "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books_23-2149342941.jpg?ga=GA1.1.386693064.1710494351&semt=ais_hybrid"
+  },
+  {
+    "id":11,
+    "name":"Moby-Dick",
+    "title":"Classic Literature",
+    "price":100,
+    "categary":"Classic Literature",
+    "image":"https://img.freepik.com/premium-vector/books-flying-stacked-cartoons_18591-47926.jpg?ga=GA1.1.386693064.1710494351&semt=ais_hybrid"
+  }
+]
