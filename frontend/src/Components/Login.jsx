@@ -1,7 +1,8 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-
+import { toast } from "react-hot-toast";
+import axios from "axios";
 function Login() {
   const navigate = useNavigate();
   const {
@@ -11,10 +12,29 @@ function Login() {
   } = useForm();
 
   const onSubmit = (data) => {
+    const userInfo = {
+      email: data.email,
+      password: data.password,
+    };
+
+    axios
+      .post("http://localhost:8080/login", userInfo)
+      .then((response) => {
+        // API response ke hisaab se navigation
+        if (response.data) {
+          toast.success("login successfull !");
+          navigate("/"); // Navigation ko yahin shift kar dein
+        }
+        localStorage.setItem("Users", JSON.stringify(response.data.user));
+      })
+      .catch((err) => {
+        if (err.response) {
+          console.log(err);
+          toast.error("This is an error!", err.response.data);
+        }
+      });
+
     console.log(data);
-    // Close modal and navigate to home
-    document.getElementById("my_modal_3").close();
-    navigate("/");
   };
 
   return (

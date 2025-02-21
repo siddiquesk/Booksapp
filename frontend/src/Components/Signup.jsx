@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Login from "./Login";
 import { useForm } from "react-hook-form";
-
+import axios from "axios";
 function Signup() {
   const navigate = useNavigate();
   const {
@@ -10,10 +10,32 @@ function Signup() {
     handleSubmit,
     formState: { errors },
   } = useForm();
+
   const onSubmit = (data) => {
+    const userInfo = {
+      name: data.name,
+      email: data.email,
+      password: data.password,
+    };
+
+    axios
+      .post("http://localhost:8080/signup", userInfo)
+      .then((response) => {
+        // API response ke hisaab se navigation
+        if (response.data) {
+          toast.success("signup Successfully !");
+          navigate("/"); // Navigation ko yahin shift kar dein
+        }
+        localStorage.setItem("Users", JSON.stringify(response.data.user));
+      })
+      .catch((err) => {
+        if (err.response) {
+          console.log(err);
+          toast.error("This is an error!", err.response.data);
+        }
+      });
+
     console.log(data);
-    // Form valid: navigate to home page
-    navigate("/");
   };
 
   return (
