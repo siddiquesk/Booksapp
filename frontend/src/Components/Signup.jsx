@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import Login from "./Login";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
+
 function Signup() {
   const navigate = useNavigate();
   const {
@@ -12,6 +14,7 @@ function Signup() {
   } = useForm();
 
   const onSubmit = (data) => {
+    // Ensure backend field names match: name, email, password
     const userInfo = {
       name: data.name,
       email: data.email,
@@ -21,28 +24,35 @@ function Signup() {
     axios
       .post("http://localhost:8080/signup", userInfo)
       .then((response) => {
-        // API response ke hisaab se navigation
+        // Agar response data mile, to user ko localStorage me store karein aur toast & redirect karein
         if (response.data) {
-          toast.success("signup Successfully !");
-          navigate("/"); // Navigation ko yahin shift kar dein
+          localStorage.setItem("Users", JSON.stringify(response.data.user));
+          toast.success("Signup Successfully!");
+          // Redirect immediately ya thoda delay karke
+          setTimeout(() => {
+            navigate("/");
+          }, 1000);
         }
-        localStorage.setItem("Users", JSON.stringify(response.data.user));
       })
       .catch((err) => {
         if (err.response) {
-          console.log(err);
-          toast.error("This is an error!", err.response.data);
+          console.error(err);
+          toast.error("Error: " + err.response.data.message);
+        } else {
+          toast.error("Signup failed. Please try again.");
         }
       });
 
-    console.log(data);
+    console.log("Form Data:", data);
   };
 
   return (
     <>
+      {/* Toaster for react-hot-toast */}
+      <Toaster />
       <div className="flex justify-center items-center h-screen">
         <div className="modal-box relative p-8 shadow-lg rounded-md bg-white">
-          {/* Agar aap Signup page ko modal ke andar use kar rahe hain to close button ke liye check karein */}
+          {/* Close modal button */}
           <Link
             to="/"
             type="button"
@@ -116,11 +126,12 @@ function Signup() {
               </p>
             </div>
           </form>
-          {/* Render the Login component outside the <form> */}
+          {/* Render the Login component outside the form */}
           <Login />
         </div>
       </div>
     </>
   );
 }
+
 export default Signup;

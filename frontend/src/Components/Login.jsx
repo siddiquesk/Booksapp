@@ -23,7 +23,12 @@ function Login() {
         // API response ke hisaab se navigation
         if (response.data) {
           toast.success("login successfull !");
-          navigate("/"); // Navigation ko yahin shift kar dein
+          setTimeout(() => {
+            document.getElementById("my_modal_3").close();
+            window.location.reload();
+            navigate("/");
+          }, 1000);
+          // Navigation ko yahin shift kar dein
         }
         localStorage.setItem("Users", JSON.stringify(response.data.user));
       })

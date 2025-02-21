@@ -38,32 +38,35 @@ app.get("/", async (req, res) => {
 });
 
 
-app.post("/signup",async (req,res)=>{
-  try{
-    const {name,email,password}=req.body;
-    const user=await User.findOne({email});
-    if(user){
-     return res.status(400).json({message:"User alredy exists "});
+app.post("/signup", async (req, res) => {
+  try {
+    const { name, email, password } = req.body;
+    const user = await User.findOne({ email });
+    if (user) {
+      return res.status(400).json({ message: "User already exists" });
     }
-    const haPassword= await bcrypt.hash(password,10)  
-      const createUser=new User({
-        name:name,
-        email:email,
-        password:haPassword
-      })
-      let userdetails= await createUser.save()
-      res.status(201).json({message:"user created successfully",user:{
-        _id:userdetails._id,
-        name:userdetails.name,
-        email:userdetails.email
-      }});
-      console.log(userdetails);
-    
-  }catch(err){
+    const haPassword = await bcrypt.hash(password, 10);
+    const createUser = new User({
+      name: name,
+      email: email,
+      password: haPassword,
+    });
+    let userdetails = await createUser.save();
+    res.status(201).json({
+      message: "User created successfully",
+      user: {
+        _id: userdetails._id,
+        name: userdetails.name,
+        email: userdetails.email,
+      },
+    });
+    console.log(userdetails);
+  } catch (err) {
     console.log(err);
-    res.status(500).json({message:"Internal server error"});
+    res.status(500).json({ message: "Internal server error" });
   }
-})
+});
+
 
 
 
