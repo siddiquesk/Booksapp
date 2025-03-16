@@ -59,7 +59,6 @@ app.post("/signup", async (req, res) => {
         email: userdetails.email,
       },
     });
-    console.log(userdetails);
   } catch (err) {
     res.status(500).json({ message: "Internal server error" });
   }
@@ -92,7 +91,6 @@ app.post("/login", async (req, res) => {
       }
     });
   } catch (err) {
-    console.log(err);
     res.status(500).json({ message: "Internal server error" });
   }
 });

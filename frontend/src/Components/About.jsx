@@ -24,7 +24,7 @@ const About = () => {
           applications.
         </p>
         <p className="mt-4 text-gray-700 text-lg">
-          With an <span className="font-semibold">MCA degree</span> and a solid
+          With an <span className="font-semibold">Bca degree</span> and a solid
           background in full-stack development, I have developed multiple
           projects, including
           <span className="text-blue-600">
@@ -150,7 +150,7 @@ const About = () => {
       {/* Social Links */}
       <section className="mt-8 bg-white p-6 rounded-lg shadow-lg">
         <h2 className="text-3xl font-bold text-gray-800 mb-4">
-          Let’s Connect!
+          Connect with sufiyan
         </h2>
         <ul className="list-disc list-inside text-blue-600">
           <li>
