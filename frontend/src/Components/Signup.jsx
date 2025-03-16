@@ -22,7 +22,7 @@ function Signup() {
     };
 
     axios
-      .post("http://localhost:8080/signup", userInfo)
+      .post("https://mybookstore-xcse.onrender.com/signup", userInfo)
       .then((response) => {
         // Agar response data mile, to user ko localStorage me store karein aur toast & redirect karein
         if (response.data) {
