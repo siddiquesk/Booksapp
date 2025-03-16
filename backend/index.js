@@ -4,7 +4,7 @@ require("dotenv").config();
 const mongoose = require('mongoose');
 const Book=require("./models/books");
 const User=require("./models/Users");
-const bcrypt=require("bcrypt");
+const bcrypt = require("bcryptjs");
 const cors=require("cors");
 const session = require("express-session");
 const PORT=process.env.PORT || 3000
