@@ -2,6 +2,7 @@ import React from "react";
 import Home from "./Home/Home";
 import Courses from "./Course/Courses";
 import Signup from "./Components/Signup";
+import AboutMe from "./Components/About/AboutMe";
 import Contact from "./Components/Contact";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
@@ -19,6 +20,7 @@ function App() {
         />
         <Route path="/signup" element={<Signup />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
+        <Route path="/about" element={<AboutMe />}></Route>
       </Routes>
       <Toaster />
     </>
