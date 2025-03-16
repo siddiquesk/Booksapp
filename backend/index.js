@@ -29,7 +29,6 @@ app.use(session(sessionOption));
 app.get("/", async (req, res) => {
   try {
     const books = await Book.find({}).lean();
-    console.log(books);
     res.status(200).json(books);
   } catch (err) {
     console.log(err);
@@ -62,7 +61,6 @@ app.post("/signup", async (req, res) => {
     });
     console.log(userdetails);
   } catch (err) {
-    console.log(err);
     res.status(500).json({ message: "Internal server error" });
   }
 });
